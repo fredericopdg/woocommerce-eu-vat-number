@@ -165,7 +165,7 @@ if ( is_woocommerce_active() ) {
 				echo '</div>';
 
 				$inline_js = "
-					jQuery('select#billing_country').live('change', function(){
+					jQuery('select#billing_country').on('change', function(){
 
 					var country = jQuery('select#billing_country').val();
 				";
@@ -340,7 +340,7 @@ if ( is_woocommerce_active() ) {
 							$this->is_eu_vat_number = true;
 
 							wp_cache_set( 'vat_number_' . $vat_prefix . $this->vat_number, 1 );
-							
+
 							return true;
 
 						} else {
